@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a0a427486c4aa46bcbc32396516688ef
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Newsreader 6pt
+  fontNames:
+  - Newsreader 6pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 50d386f20830f413c9f31ec1d66e6ef1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

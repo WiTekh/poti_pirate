@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 322e2a7bc02364f389b811d24242ff05
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Newsreader 20pt
+  fontNames:
+  - Newsreader 20pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b1cbe73427d57481e86bbe459317f5f7, type: 3}
+  - {fileID: 12800000, guid: 50f50affc69864f31808a37ea0a4f3a5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

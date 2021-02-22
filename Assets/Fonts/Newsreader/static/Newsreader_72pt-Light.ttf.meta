@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 7df3084eecc814b9bb809256b1ec5264
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Newsreader 72pt
+  fontNames:
+  - Newsreader 72pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 11d256802de41434e82a8307fe33e452, type: 3}
+  - {fileID: 12800000, guid: 1098bdb1a763b4ff0b1d5efc6a2d57fa, type: 3}
+  - {fileID: 12800000, guid: a2a89424b68d9473e8e11797e1fbd52a, type: 3}
+  - {fileID: 12800000, guid: 4611d6383c36e44ebbb4cf88e7bf9a6a, type: 3}
+  - {fileID: 12800000, guid: 0accace859f144e78b7eb15b22918b2e, type: 3}
+  - {fileID: 12800000, guid: 900c7b594524e4de8b7c954ab75b9bc6, type: 3}
+  - {fileID: 12800000, guid: 35d7cfc912abf40fdbebb02b8681242e, type: 3}
+  - {fileID: 12800000, guid: e352a3d94470e4414824caff3830b096, type: 3}
+  - {fileID: 12800000, guid: 200baafb27eec4950a93f338f2e2bac4, type: 3}
+  - {fileID: 12800000, guid: 623a7e6cb0b554034af64cb1566a7c3a, type: 3}
+  - {fileID: 12800000, guid: 85f8739c234f444babca9b871365a1a7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

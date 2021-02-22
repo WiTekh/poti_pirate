@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 53d12529c6eb1435a9f2e71680356047
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Newsreader 10pt
+  fontNames:
+  - Newsreader 10pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 80daaaa7fd3044945bca3a4c35c94d6c, type: 3}
+  - {fileID: 12800000, guid: b1074ad7044e246b0ab20569951a95f2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
