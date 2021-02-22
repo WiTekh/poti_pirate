@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 29720690c777d4b77a3f790dfed16093
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Newsreader 8pt
+  fontNames:
+  - Newsreader 8pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a86986d06a22140578a8f01f0ed9ec66, type: 3}
+  - {fileID: 12800000, guid: 6821bf835886c44d0a83280e1774971e, type: 3}
+  - {fileID: 12800000, guid: 852f96d4deda6483faf2ddba4e211898, type: 3}
+  - {fileID: 12800000, guid: c81a34680ae4f42b782112e2a1011cc0, type: 3}
+  - {fileID: 12800000, guid: 5350729fde56d4b6e89958f008640c77, type: 3}
+  - {fileID: 12800000, guid: 292245fff4f094baa9f4d06d75e7a43d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

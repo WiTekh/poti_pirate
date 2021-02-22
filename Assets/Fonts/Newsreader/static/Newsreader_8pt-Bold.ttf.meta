@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 852f96d4deda6483faf2ddba4e211898
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Newsreader 8pt
+  fontNames:
+  - Newsreader 8pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5350729fde56d4b6e89958f008640c77, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

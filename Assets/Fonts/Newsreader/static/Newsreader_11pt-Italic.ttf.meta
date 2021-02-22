@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: ebaf5f9058bc049799b47de54c2ad3b5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Newsreader 11pt
+  fontNames:
+  - Newsreader 11pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 33a43d2045e4f4756b4c3f590b35841e, type: 3}
+  - {fileID: 12800000, guid: 769aa5404d9a546dbae263e61af0a3d6, type: 3}
+  - {fileID: 12800000, guid: 06db27a3845b144828415391e5234abe, type: 3}
+  - {fileID: 12800000, guid: 120fdd540dbde43ff92a08311fd4b030, type: 3}
+  - {fileID: 12800000, guid: 5b24d1254dc5c4d6fac0cbf34b8a98d8, type: 3}
+  - {fileID: 12800000, guid: a2dd07264d48e4639b1d44e5158d534f, type: 3}
+  - {fileID: 12800000, guid: 74ec01c6390c44cb78abf3a23317fb09, type: 3}
+  - {fileID: 12800000, guid: bb16e3f7005f14e9780e7a4f5f89ea4f, type: 3}
+  - {fileID: 12800000, guid: e79a9188aef264f6aac681ec22552c8a, type: 3}
+  - {fileID: 12800000, guid: f72be009e7bfc4ce3bb9d7b17663abda, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
