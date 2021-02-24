@@ -7,6 +7,7 @@ public class TPSMovement : MonoBehaviour
 {
     private CharacterController m_controller;
     public Transform m_camera;
+    private animationStateController m_animController;
 
     public float m_speed = 6;
     float turnSmoothVelocity;
@@ -15,6 +16,7 @@ public class TPSMovement : MonoBehaviour
     {
         //Getting controller from this GO
         m_controller = GetComponent<CharacterController>();
+        m_animController = transform.GetChild(0).GetComponent<animationStateController>();
     }
 
     void Update()
@@ -45,7 +47,13 @@ public class TPSMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, l_angle, 0f); // applying Rotation
 
             Vector3 l_moveDirection = Quaternion.Euler(0f, l_targetAngle, 0f) * Vector3.forward;
+
             m_controller.Move(l_moveDirection.normalized * m_speed * Time.deltaTime); //Apply movements
         }
+
+        // Synchronize rotation of Visual
+        // (Only fix I found quickly enough to the animation reset position problem)
+        // (Might be ressources greedy)
+        m_animController.m_rotation = transform.rotation;
     }
 }
