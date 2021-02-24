@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Inputs;
 
 public class animationStateController : MonoBehaviour
 {
@@ -17,18 +18,18 @@ public class animationStateController : MonoBehaviour
     }
     void Update()
     {
-        bool l_forwardPressed = Input.GetKey("w");
-        bool l_isEPressed = Input.GetKey("e");
+        bool l_forwardPressed = Input.GetKey(InputArray[0]) || Input.GetKey(InputArray[1]) || Input.GetKey(InputArray[2]) || Input.GetKey(InputArray[3]);
+        bool l_isEPressed = Input.GetKey(InputArray[4]);
 
         bool l_isRunning = m_animator.GetBool(isRunningHash);
 
         if (l_isEPressed)
         {
-            m_animator.SetTrigger("pickup");
+            m_animator.SetTrigger(pickUpHash);
         }
         else
         {
-           m_animator.ResetTrigger("pickup");
+           m_animator.ResetTrigger(pickUpHash);
         }
 
         if (l_forwardPressed && !l_isRunning)
