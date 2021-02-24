@@ -12,4 +12,9 @@ public class MenuButtonManager : MonoBehaviour
     {
         Debug.Log("Opening Settings..");
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
