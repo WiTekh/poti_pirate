@@ -14,6 +14,9 @@ public class Floater : MonoBehaviour
     public float m_waterDrag = 0.99f;
     public float m_waterAngularDrag = 0.5f;
 
+    public float phaseX;
+
+
     private void FixedUpdate()
     {
         m_rigidBody.AddForceAtPosition(Physics.gravity / m_floaterCount, transform.position, ForceMode.Acceleration 

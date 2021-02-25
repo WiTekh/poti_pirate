@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     public float length = 2f;
     public float speed = 1f;
     public float offset = 0f;
-
+    
     public static WaveManager instance;
     private void Awake()
     {
@@ -31,6 +31,7 @@ public class WaveManager : MonoBehaviour
     public float GetWaveHeight(float x)
     {
         float X = x / length + offset;
+        
         return amplitude * Mathf.Sin(X);
     }
 }
