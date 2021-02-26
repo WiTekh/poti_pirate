@@ -5,17 +5,21 @@ using static Inputs;
 
 public class TPSMovement : MonoBehaviour
 {
-    private CharacterController m_controller;
+    private Rigidbody m_rb;
     public Transform m_camera;
     private animationStateController m_animController;
+    //private CharacterController m_controller;
 
     public float m_speed = 6;
+    private const float m_gravity = 9.81f;
+    
     float turnSmoothVelocity;
 
     void Start()
     {
         //Getting controller from this GO
-        m_controller = GetComponent<CharacterController>();
+        m_rb = GetComponent<Rigidbody>();
+        //m_controller = GetComponent<CharacterController>();
         m_animController = transform.GetChild(0).GetComponent<animationStateController>();
     }
 
@@ -48,7 +52,7 @@ public class TPSMovement : MonoBehaviour
 
             Vector3 l_moveDirection = Quaternion.Euler(0f, l_targetAngle, 0f) * Vector3.forward;
 
-            m_controller.Move(l_moveDirection.normalized * m_speed * Time.deltaTime); //Apply movements
+            //m_controller.Move(l_moveDirection.normalized * m_speed * Time.deltaTime); //Apply movements
         }
 
         // Synchronize rotation of Visual
