@@ -6,20 +6,19 @@ using static Inputs;
 
 public class lootPickup : MonoBehaviour
 {
-    public float cooldown = 3f;
     private float tictac = 0;
     private bool PickupAct = true;
 
     void Update()
     {
-        if (tictac > cooldown)
+        if (tictac > 2f)
         {
             Debug.Log("STOP");
             PickupAct = true;
             tictac = 0;
         }
         
-        if (PickupAct == false)
+        if (!PickupAct)
         {
             Debug.Log("No : " + tictac);
             tictac += Time.deltaTime;
