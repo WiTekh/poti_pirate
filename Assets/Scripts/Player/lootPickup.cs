@@ -57,8 +57,14 @@ public class lootPickup : MonoBehaviour
                             case "Cannonball" :
                                 Inventory.cannonball++;
                                 break;
+                            case "Cannonballs" :
+                                Inventory.cannonball+=4;
+                                break;
                             case "Plank" :
                                 Inventory.planks++;
+                                break;
+                            case "Planks" :
+                                Inventory.planks+=6;
                                 break;
                         }
                         Destroy(hitCollider.gameObject);
