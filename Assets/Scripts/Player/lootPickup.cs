@@ -58,13 +58,13 @@ public class lootPickup : MonoBehaviour
                                 Inventory.cannonball++;
                                 break;
                             case "Cannonballs" :
-                                Inventory.cannonball+=4;
+                                Inventory.cannonball+=3;
                                 break;
                             case "Plank" :
                                 Inventory.planks++;
                                 break;
                             case "Planks" :
-                                Inventory.planks+=6;
+                                Inventory.planks+=3;
                                 break;
                         }
                         Destroy(hitCollider.gameObject);
@@ -79,7 +79,7 @@ public class lootPickup : MonoBehaviour
                 {
                     if (Input.GetKeyDown(InputArray[4]))
                     {
-                        Inventory.water++;
+                        Inventory.water+=2;
                         PickupAct = false;
                     }
                 }
