@@ -8,12 +8,15 @@ using UnityEngine;
 public class WaterManager : MonoBehaviour
 {
     private MeshFilter m_filter;
+
+    public WaveManager m_waveManager;
     
     public float m_size = 1.0f;
     public int m_gridSize = 16;
 
     private void Awake()
     {
+        m_waveManager = GetComponent<WaveManager>();
         m_filter = GetComponent<MeshFilter>();
         
         Mesh l_mesh = m_filter.mesh;
@@ -59,7 +62,7 @@ public class WaterManager : MonoBehaviour
         Vector3[] l_vertices = m_filter.mesh.vertices;
         for (int i = 0; i < l_vertices.Length; i++)
         {
-            l_vertices[i].y = WaveManager.instance.GetWaveHeight(transform.position.x + l_vertices[i].x, transform.position.z + l_vertices[i].z);
+            l_vertices[i].y = m_waveManager.GetWaveHeight(transform.position.x + l_vertices[i].x, transform.position.z + l_vertices[i].z);
         }
 
         m_filter.mesh.vertices = l_vertices;

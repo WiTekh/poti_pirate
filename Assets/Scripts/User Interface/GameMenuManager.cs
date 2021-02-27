@@ -17,7 +17,7 @@ public class GameMenuManager : MonoBehaviour
     void Update()
     {
         //If 'Esc' pressed, pause the InGame time, and display the menu
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !Inventory.isDed)
         {
             if (!m_isOpen)
             {
@@ -40,6 +40,8 @@ public class GameMenuManager : MonoBehaviour
     //Back to menu WITHOUT SAVE
     public void BackToMenu()
     {
+        //RESET GAME1 SOMEHOW
         SceneManager.LoadScene(0);
     }
+    
 }

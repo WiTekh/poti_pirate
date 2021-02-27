@@ -13,15 +13,14 @@ public class Floater : MonoBehaviour
 
     public float m_waterDrag = 0.99f;
     public float m_waterAngularDrag = 0.5f;
-
-    public float phaseX;
-
+    
+    public WaveManager m_waveManager;
 
     private void FixedUpdate()
     {
         m_rigidBody.AddForceAtPosition(Physics.gravity / m_floaterCount, transform.position, ForceMode.Acceleration 
         );
-        float l_waveHeight = WaveManager.instance.GetWaveHeight(transform.position.x, transform.position.z);
+        float l_waveHeight = m_waveManager.GetWaveHeight(transform.position.x, transform.position.z);
         
         if (transform.position.y < l_waveHeight )
         {
