@@ -8,7 +8,7 @@ public class lootPickup : MonoBehaviour
 {
     void Update()
     {    
-        DebugPickup(transform.position, 0.6f);
+        DebugPickup(transform.position, 2f);
     }
 
     void DebugPickup(Vector3 center, float radius)
@@ -20,6 +20,7 @@ public class lootPickup : MonoBehaviour
             {
                 if (Input.GetKeyDown(InputArray[4]))
                 {
+                    Debug.Log(hitCollider.gameObject.name);
                     switch (hitCollider.gameObject.name)
                     {
                         case "Banana" :
