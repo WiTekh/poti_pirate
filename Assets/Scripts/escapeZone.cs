@@ -6,6 +6,7 @@ using UnityEngine;
 public class escapeZone : MonoBehaviour
 {
     public GameObject confirm;
+    public GameObject Player;
     private void OnTriggerEnter(Collider other)
     {
         GameObject l_collided = other.gameObject;
@@ -15,6 +16,8 @@ public class escapeZone : MonoBehaviour
             
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            
+            Player.GetComponent<new_TPS_Movement.new_TPS_Movement>().m_canMove = false;
         }
     }
 }
