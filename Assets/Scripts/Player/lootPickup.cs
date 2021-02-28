@@ -13,20 +13,13 @@ public class lootPickup : MonoBehaviour
     {
         if (tictac > 2f)
         {
-            Debug.Log("STOP");
             PickupAct = true;
             tictac = 0;
         }
         
         if (!PickupAct)
         {
-            Debug.Log("No : " + tictac);
             tictac += Time.deltaTime;
-        }
-
-        if (PickupAct)
-        {
-            Debug.Log("YES");
         }
         Pickup(transform.position, 2f);
     }
