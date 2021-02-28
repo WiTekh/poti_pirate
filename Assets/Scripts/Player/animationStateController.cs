@@ -5,10 +5,12 @@ using static Inputs;
 
 public class animationStateController : MonoBehaviour
 {
+    public new_TPS_Movement.new_TPS_Movement PlayerMovement;
     Animator m_animator;
 
-    int isRunningHash;
-    int pickUpHash;
+    private int isRunningHash;
+    private int pickUpHash;
+    private int canMoveHash;
 
     [HideInInspector] public Quaternion m_rotation;
     [HideInInspector] public Vector3 m_position;
@@ -17,10 +19,14 @@ public class animationStateController : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
         isRunningHash = Animator.StringToHash("isRunning");
+        canMoveHash = Animator.StringToHash("canMove");
         pickUpHash = Animator.StringToHash("pickup");
     }
     void Update()
     {
+        if (m_animator.GetBool(canMoveHash) != PlayerMovement.m_canMove)
+            m_animator.SetBool(canMoveHash, PlayerMovement.m_canMove);
+        
         bool l_forwardPressed = Input.GetKey(InputArray[0]) || Input.GetKey(InputArray[1]) || Input.GetKey(InputArray[2]) || Input.GetKey(InputArray[3]);
         bool l_isEPressed = Input.GetKey(InputArray[4]);
 

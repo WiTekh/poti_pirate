@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using static Inputs;
 
-namespace Movement
+namespace new_TPS_Movement
 {
     [RequireComponent(typeof(Rigidbody))]
     public class new_TPS_Movement : MonoBehaviour
@@ -17,7 +17,7 @@ namespace Movement
         private float m_currentSpeed;
 
         private bool m_isMoving;
-        public bool m_canMove = true;
+        public bool m_canMove;
         
         private Rigidbody m_rb;
         private animationStateController m_animController;
