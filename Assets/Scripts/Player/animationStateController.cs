@@ -11,6 +11,7 @@ public class animationStateController : MonoBehaviour
     int pickUpHash;
 
     [HideInInspector] public Quaternion m_rotation;
+    [HideInInspector] public Vector3 m_position;
 
     void Start()
     {
@@ -43,11 +44,12 @@ public class animationStateController : MonoBehaviour
             m_animator.SetBool(isRunningHash, false);
         }
 
-        if (Mathf.Abs(transform.position.y) >= 0.01f){
-            transform.position = new Vector3(transform.position.x, 0.0f, transform.position.z);
+        if (transform.position.magnitude >= 0.01f){
+            transform.position = m_position;
         }
         if (Mathf.Abs(transform.rotation.y) >= 0.01f){
             transform.rotation = m_rotation;
         }
+        
     }
 }
