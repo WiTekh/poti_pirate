@@ -17,7 +17,7 @@ public class proceduralGen : MonoBehaviour {
     List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
 
     void Start() {
-        chunkSize = 16;
+        chunkSize = 32;
         chunksVisibleInViewDst = Mathf.RoundToInt(maxViewDst / chunkSize);
         waterPlane = Resources.Load("waterPlane") as GameObject;
     }
