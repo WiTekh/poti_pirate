@@ -43,7 +43,14 @@ public class Timer : MonoBehaviour
             startTime -= Time.deltaTime;
         }
         //timer.text = Mathf.Round(startTime).ToString();
-        timer.text = $"{Mathf.Floor(startTime / 60f)}:{Mathf.Floor(startTime % 60)}";
+        if (Mathf.Floor(startTime % 60) <= 9)
+        {
+            timer.text = $"{Mathf.Floor(startTime / 60f)}:0{Mathf.Floor(startTime % 60)}";   
+        }
+        else
+        {
+            timer.text = $"{Mathf.Floor(startTime / 60f)}:{Mathf.Floor(startTime % 60)}";   
+        }
 
     }
 }
