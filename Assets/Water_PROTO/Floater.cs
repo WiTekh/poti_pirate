@@ -16,6 +16,10 @@ public class Floater : MonoBehaviour
     
     public WaveManager m_waveManager;
 
+    private void Awake()
+    {
+        m_waveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
+    }
     private void FixedUpdate()
     {
         m_rigidBody.AddForceAtPosition(Physics.gravity / m_floaterCount, transform.position, ForceMode.Acceleration 

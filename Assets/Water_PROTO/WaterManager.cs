@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 //[RequireComponent(typeof(MeshFilter))]
@@ -11,12 +9,12 @@ public class WaterManager : MonoBehaviour
 
     public WaveManager m_waveManager;
     
-    public float m_size = 1.0f;
-    public int m_gridSize = 16;
+    public float m_size;
+    public int m_gridSize;
 
-    private void Awake()
+    private void OnEnable()
     {
-        m_waveManager = GetComponent<WaveManager>();
+        m_waveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         m_filter = GetComponent<MeshFilter>();
         
         Mesh l_mesh = m_filter.mesh;
@@ -57,7 +55,7 @@ public class WaterManager : MonoBehaviour
         l_mesh.SetTriangles(l_triangles, 0);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3[] l_vertices = m_filter.mesh.vertices;
         for (int i = 0; i < l_vertices.Length; i++)
