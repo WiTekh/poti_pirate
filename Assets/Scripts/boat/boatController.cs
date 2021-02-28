@@ -11,6 +11,11 @@ public class boatController : MonoBehaviour
     [SerializeField] private float m_rotateSpeed;
     private void Update()
     {
+        if (Input.GetKey(KeyCode.A))
+        {
+            Instantiate(Resources.Load("waterPlane"));
+        }
+        
         if (Input.GetKeyDown(InputArray[5]))
         {
             m_isMoving = !m_isMoving;

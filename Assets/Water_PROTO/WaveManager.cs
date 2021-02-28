@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     public float length = 2f;
     public float speed = 1f;
     public float offset = 0f;
-
+    
     private void Update()
     {
         offset += speed * Time.deltaTime;
