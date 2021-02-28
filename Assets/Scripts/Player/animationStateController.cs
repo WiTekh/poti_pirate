@@ -15,6 +15,11 @@ public class animationStateController : MonoBehaviour
     [HideInInspector] public Quaternion m_rotation;
     [HideInInspector] public Vector3 m_position;
 
+    private const int m_time = 3;
+    private float m_currentTime = 0f;
+
+    //public bool isPickup;
+    
     void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -24,7 +29,21 @@ public class animationStateController : MonoBehaviour
     }
     void Update()
     {
-        if (m_animator.GetBool(canMoveHash) != PlayerMovement.m_canMove)
+        //isPickup = m_animator.GetBool(pickUpHash);
+        
+        if (m_animator.GetBool(pickUpHash))
+        {
+            if (m_currentTime < m_time)
+            {
+                m_currentTime += Time.deltaTime;
+            }
+            else
+            {
+                m_animator.SetBool(pickUpHash, false);
+            }
+        }
+        
+        if (m_animator.GetBool(pickUpHash) != PlayerMovement.m_canMove)
             m_animator.SetBool(canMoveHash, PlayerMovement.m_canMove);
         
         bool l_forwardPressed = Input.GetKey(InputArray[0]) || Input.GetKey(InputArray[1]) || Input.GetKey(InputArray[2]) || Input.GetKey(InputArray[3]);
@@ -34,11 +53,7 @@ public class animationStateController : MonoBehaviour
 
         if (l_isEPressed)
         {
-            m_animator.SetTrigger(pickUpHash);
-        }
-        else
-        {
-           m_animator.ResetTrigger(pickUpHash);
+            m_animator.SetBool(pickUpHash, true);
         }
 
         if (l_forwardPressed && !l_isRunning)
