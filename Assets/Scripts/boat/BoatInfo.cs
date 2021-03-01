@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class BoatInfo : MonoBehaviour
 {
-    public Slider helth;
+    private Slider helth;
     private int healthstag = 2;
     private float timer;
     private bool Touched = false;
