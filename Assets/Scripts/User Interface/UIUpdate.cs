@@ -24,7 +24,9 @@ public class UIUpdate : MonoBehaviour
         foodText.text = food.ToString();
         waterText.text = water.ToString();
         plankText.text = planks.ToString();
-        canonballText.text = cannonball.ToString();
+        
+        if (canonballText != null) 
+            canonballText.text = cannonball.ToString();
         
         if (Inventory.treasure)
             this.treasure.SetActive(true);

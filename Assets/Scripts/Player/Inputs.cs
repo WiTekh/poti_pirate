@@ -10,9 +10,11 @@ public static class Inputs
      * 6 - boatShootLeft   * 7 - boatShootRight
      */
 
-    public static KeyCode[] InputArray = new KeyCode[] { 
-        KeyCode.W, KeyCode.S, 
-        KeyCode.A, KeyCode.D, 
-        KeyCode.E, KeyCode.Z, 
-        KeyCode.LeftArrow, KeyCode.RightArrow};
+    public static string[] InputArray = new string[]
+    {
+        "w", "s",
+        "a", "d",
+        "e", "z",
+        "q", "e"
+    };
 }

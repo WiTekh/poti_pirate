@@ -1,48 +1,39 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Inputs;
 
-namespace Movement
+namespace new_TPS_Movement
 {
     [RequireComponent(typeof(Rigidbody))]
     public class new_TPS_Movement : MonoBehaviour
     {
-        #region PUBLIC FIELDS
         [Header("Walk Settings")] public float walkSpeed;
 
         [Header("Camera Settings")] public Transform tpCam;
-        
-        #endregion
-        
-        #region PRIVATE FIELDS
 
         private float m_xAxis;
         private float m_zAxis;
         private float m_currentSpeed;
 
+        private float cantMoveTime = 2f;
+        private float currentCD = 0f;
+        
         private bool m_isMoving;
+        public bool m_canMove;
+        
         private Rigidbody m_rb;
         private animationStateController m_animController;
 
         private float m_turnSmoothVelocity;
 
-        #endregion
-        
-        #region MONODEVELOP ROUTINES
-
         private void Awake()
         {
+            m_canMove = true;
             m_animController = transform.GetChild(0).GetComponent<animationStateController>();
-        }
-
-        private void Start()
-        {
-            #region initializing components
-
+            tpCam = GameObject.Find("TPCam").transform;
             m_rb = GetComponent<Rigidbody>();
-
-            #endregion
         }
 
         private void Update()
@@ -65,25 +56,51 @@ namespace Movement
 
         private void FixedUpdate()
         {
-            #region rotate player
-
-            float l_targetAngle = Mathf.Atan2(m_xAxis, m_zAxis) * Mathf.Rad2Deg + tpCam.eulerAngles.y; // Compute the angle that faces the camera
-            float l_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, l_targetAngle, ref m_turnSmoothVelocity, 0.1f); // Smoothing the angle when we go from moving forwrd to strafing left
-
-            transform.rotation = m_isMoving ? Quaternion.Euler(0f, l_angle, 0f) : transform.rotation; // applying Rotation
+            //stopMoving if picking up
+            if (Input.GetKey(InputArray[4])) {
+                m_canMove = false;
+            }
             
-            Vector3 l_moveDirection = Quaternion.Euler(0f, l_targetAngle, 0f) * Vector3.forward;
+            if (m_canMove)
+            {
+                #region rotate player
 
-            #endregion
-            
-            #region move player
+                float l_targetAngle =
+                    Mathf.Atan2(m_xAxis, m_zAxis) * Mathf.Rad2Deg +
+                    tpCam.eulerAngles.y; // Compute the angle that faces the camera
+                float l_angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, l_targetAngle, ref m_turnSmoothVelocity,
+                    0.1f); // Smoothing the angle when we go from moving forwrd to strafing left
 
-            //m_rb.MovePosition(transform.position + Time.deltaTime * walkSpeed *
-            //transform.TransformDirection(m_xAxis, 0f, m_zAxis));
-            
-            m_rb.MovePosition(transform.position + l_moveDirection.normalized * Time.deltaTime * m_currentSpeed);
+                transform.rotation =
+                    m_isMoving ? Quaternion.Euler(0f, l_angle, 0f) : transform.rotation; // applying Rotation
 
-            #endregion
+                Vector3 l_moveDirection = Quaternion.Euler(0f, l_targetAngle, 0f) * Vector3.forward;
+
+                #endregion
+
+                #region move player
+
+                //m_rb.MovePosition(transform.position + Time.deltaTime * walkSpeed *
+                //transform.TransformDirection(m_xAxis, 0f, m_zAxis));
+
+                m_rb.MovePosition(transform.position + l_moveDirection.normalized * Time.deltaTime * m_currentSpeed);
+
+                #endregion
+            }
+            else
+            {
+                //reset Cooldown
+                if (currentCD <= cantMoveTime)
+                {
+                    currentCD += Time.deltaTime;
+                }
+                else
+                {
+                    currentCD = 0f;
+                    m_canMove = true;
+                    m_animController.GetComponent<Animator>().SetBool("pickup", false);
+                }
+            }
 
             //Reset Visual's transform
             // (Only fix I found quickly enough to the animation reset position problem)
@@ -93,6 +110,5 @@ namespace Movement
 
         }
 
-        #endregion
     }
 }

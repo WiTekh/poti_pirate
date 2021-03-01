@@ -6,10 +6,11 @@ using System.IO;
 public class proceduralGen : MonoBehaviour {
 
     public const float maxViewDst = 64;
-    public Transform viewer;
+    
+    public static Transform viewer;
     public static GameObject waterPlane;
-
     public static Vector2 viewerPosition;
+    
     int chunkSize;
     int chunksVisibleInViewDst;
 
@@ -17,7 +18,7 @@ public class proceduralGen : MonoBehaviour {
     List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
 
     void Start() {
-        chunkSize = 16;
+        chunkSize = 32;
         chunksVisibleInViewDst = Mathf.RoundToInt(maxViewDst / chunkSize);
         waterPlane = Resources.Load("waterPlane") as GameObject;
     }
@@ -62,9 +63,9 @@ public class proceduralGen : MonoBehaviour {
         public TerrainChunk(Vector2 coord, int size, Transform parent) {
             position = coord * size;
             bounds = new Bounds(position,Vector2.one * size);
-            Vector3 positionV3 = new Vector3(position.x,0,position.y);
+            Vector3 positionV3 = new Vector3(position.x,parent.position.y,position.y);
 
-            meshObject = Instantiate(Resources.Load("waterPlane") as GameObject, positionV3, Quaternion.identity);
+            meshObject = Instantiate(waterPlane, positionV3, Quaternion.identity);
             meshObject.transform.position = positionV3;
             meshObject.transform.parent = parent;
             SetVisible(false);
