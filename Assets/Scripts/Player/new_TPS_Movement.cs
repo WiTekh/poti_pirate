@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Inputs;
 
 namespace new_TPS_Movement
@@ -23,19 +24,13 @@ namespace new_TPS_Movement
         private animationStateController m_animController;
 
         private float m_turnSmoothVelocity;
-        
+
         private void Awake()
         {
+            m_canMove = true;
             m_animController = transform.GetChild(0).GetComponent<animationStateController>();
-        }
-
-        private void Start()
-        {
-            #region initializing components
-
+            tpCam = GameObject.Find("TPCam").transform;
             m_rb = GetComponent<Rigidbody>();
-
-            #endregion
         }
 
         private void Update()

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 571764858671577797}
   - component: {fileID: 4868515330248846903}
   m_Layer: 0
-  m_Name: Player_final
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2689554814903989072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.49, y: 0.23, z: 10.22}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5117773878231361208}
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 7
   tpCam: {fileID: 0}
+  m_canMove: 0
 --- !u!1001 &2689554815328781814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,6 +103,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2822770902273559548, guid: 87b2cffcade7d4c01a6faa560938a021,
+        type: 3}
+      propertyPath: PlayerMovement
+      value: 
+      objectReference: {fileID: 4868515330248846903}
     - target: {fileID: 6056657843112317277, guid: 87b2cffcade7d4c01a6faa560938a021,
         type: 3}
       propertyPath: m_Name

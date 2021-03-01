@@ -6,10 +6,11 @@ using System.IO;
 public class proceduralGen : MonoBehaviour {
 
     public const float maxViewDst = 64;
-    public Transform viewer;
+    
+    public static Transform viewer;
     public static GameObject waterPlane;
-
     public static Vector2 viewerPosition;
+    
     int chunkSize;
     int chunksVisibleInViewDst;
 
