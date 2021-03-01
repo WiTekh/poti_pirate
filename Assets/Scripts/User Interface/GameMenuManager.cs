@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class GameMenuManager : MonoBehaviour
 {
     public GameObject Menu;
+    public GameObject TransitionMenu;
+    public GameObject Player;
+
     private bool m_isOpen = false;
     private bool m_isCursorVisible = false;
 
@@ -43,5 +46,15 @@ public class GameMenuManager : MonoBehaviour
         //RESET GAME1 SOMEHOW
         SceneManager.LoadScene(0);
     }
-    
+
+    public void Leave()
+    {
+        SceneManager.LoadScene("Game2");
+    }
+
+    public void Stay()
+    {
+        TransitionMenu.SetActive(false);
+        Player.GetComponent<new_TPS_Movement.new_TPS_Movement>().m_canMove = true;
+    }
 }
