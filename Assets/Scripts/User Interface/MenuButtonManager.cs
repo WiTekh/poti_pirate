@@ -12,6 +12,12 @@ public class MenuButtonManager : MonoBehaviour
         boatSelectionMenu.SetActive(true);
     }
 
+    public void Back()
+    {
+        mainMenu.SetActive(true);
+        boatSelectionMenu.SetActive(false);
+    }
+
     public void Settings()
     {
         Debug.Log("Opening Settings..");
@@ -24,6 +30,7 @@ public class MenuButtonManager : MonoBehaviour
 
     public void LoadScene(int p_bato)
     {
+        Inventory.monbato = p_bato;
         switch (p_bato)
         {
             case 0:
