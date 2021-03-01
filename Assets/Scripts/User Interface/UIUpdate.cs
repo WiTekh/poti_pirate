@@ -24,6 +24,7 @@ public class UIUpdate : MonoBehaviour
         foodText.text = food.ToString();
         waterText.text = water.ToString();
         plankText.text = planks.ToString();
+        
         if (canonballText != null) 
             canonballText.text = cannonball.ToString();
         
