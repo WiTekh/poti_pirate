@@ -11,7 +11,7 @@ public class Game2Manager : MonoBehaviour
     
     private int boat_choice = Inventory.monbato;
 
-    private void Awake()
+    private void Awake() 
     {
         switch (boat_choice)
         {

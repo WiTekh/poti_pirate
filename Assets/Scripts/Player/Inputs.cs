@@ -15,6 +15,6 @@ public static class Inputs
         "w", "s",
         "a", "d",
         "e", "z",
-        "LeftArrow", "RightArrow"
+        "q", "e"
     };
 }

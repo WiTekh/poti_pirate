@@ -422,9 +422,10 @@ GameObject:
   - component: {fileID: 4748869446621058349}
   - component: {fileID: 2716442042179078485}
   - component: {fileID: 2988746111210909646}
+  - component: {fileID: 5568042430947753399}
   m_Layer: 0
   m_Name: military
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -552,6 +553,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5375037, y: 3.2477899, z: 4.832802}
   m_Center: {x: 0.027562678, y: 1.6096556, z: 0.0049278736}
+--- !u!114 &5568042430947753399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082293960375452400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7183d03ca1d0a4a40acd258138a5bf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_leftShoot: {fileID: 0}
+  m_rightShoot: {fileID: 0}
 --- !u!1 &5150882802748044916
 GameObject:
   m_ObjectHideFlags: 0

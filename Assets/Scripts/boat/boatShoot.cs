@@ -37,10 +37,8 @@ public class boatShoot : MonoBehaviour
 
     void InstantiateCanonball(Transform p_parent, bool p_left)
     {
-        GameObject l_insted = Instantiate(
-            m_cannonBall, 
-            p_parent);
+        GameObject l_insted = Instantiate(m_cannonBall, p_parent);
         l_insted.transform.parent = p_parent;
-        l_insted.GetComponent<Rigidbody>().AddForce((p_left ? Vector3.left : Vector3.right) * 25f, ForceMode.Impulse);
+        l_insted.GetComponent<Rigidbody>().AddForce((p_left ? -p_parent.right : p_parent.right) * 25f, ForceMode.Impulse);
     }
 }
