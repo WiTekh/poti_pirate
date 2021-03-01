@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameMenuManager : MonoBehaviour
 {
-    public GameObject Menu;
+    public GameObject escMenu;
+    public GameObject settingsMenu;
     public GameObject TransitionMenu;
     public GameObject Player;
 
@@ -33,7 +34,7 @@ public class GameMenuManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            Menu.SetActive(!m_isOpen);
+            escMenu.SetActive(!m_isOpen);
             
             m_isOpen = !m_isOpen;
             m_isCursorVisible = !m_isCursorVisible;
@@ -43,8 +44,7 @@ public class GameMenuManager : MonoBehaviour
     //Back to menu WITHOUT SAVE
     public void BackToMenu()
     {
-        //RESET GAME1 SOMEHOW
-        SceneManager.LoadScene(0);
+        Application.Quit();
     }
 
     public void Leave()
@@ -56,6 +56,24 @@ public class GameMenuManager : MonoBehaviour
     {
         TransitionMenu.SetActive(false);
         Player.GetComponent<new_TPS_Movement.new_TPS_Movement>().m_canMove = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void OpenSettings()
+    {
+        escMenu.SetActive(false);
+        settingsMenu.SetActive(true);
+    }
+    public void BackSettings()
+    {
+        escMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+    }
+
+    public void LeaveEscMenu()
+    {
+        escMenu.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
