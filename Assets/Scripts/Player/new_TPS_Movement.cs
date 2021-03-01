@@ -17,6 +17,9 @@ namespace new_TPS_Movement
         private float m_zAxis;
         private float m_currentSpeed;
 
+        private float cantMoveTime = 2f;
+        private float currentCD = 0f;
+        
         private bool m_isMoving;
         public bool m_canMove;
         
@@ -53,6 +56,11 @@ namespace new_TPS_Movement
 
         private void FixedUpdate()
         {
+            //stopMoving if picking up
+            if (Input.GetKey(InputArray[4])) {
+                m_canMove = false;
+            }
+            
             if (m_canMove)
             {
                 #region rotate player
@@ -78,6 +86,20 @@ namespace new_TPS_Movement
                 m_rb.MovePosition(transform.position + l_moveDirection.normalized * Time.deltaTime * m_currentSpeed);
 
                 #endregion
+            }
+            else
+            {
+                //reset Cooldown
+                if (currentCD <= cantMoveTime)
+                {
+                    currentCD += Time.deltaTime;
+                }
+                else
+                {
+                    currentCD = 0f;
+                    m_canMove = true;
+                    m_animController.GetComponent<Animator>().SetBool("pickup", false);
+                }
             }
 
             //Reset Visual's transform

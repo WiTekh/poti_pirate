@@ -15,7 +15,7 @@ public class animationStateController : MonoBehaviour
     [HideInInspector] public Quaternion m_rotation;
     [HideInInspector] public Vector3 m_position;
 
-    private const int m_time = 3;
+    private const int m_time = 2;
     private float m_currentTime = 0f;
 
     //public bool isPickup;
@@ -23,54 +23,68 @@ public class animationStateController : MonoBehaviour
     void Start()
     {
         m_animator = GetComponent<Animator>();
+        
         isRunningHash = Animator.StringToHash("isRunning");
         canMoveHash = Animator.StringToHash("canMove");
         pickUpHash = Animator.StringToHash("pickup");
     }
     void Update()
     {
-        //isPickup = m_animator.GetBool(pickUpHash);
+        bool moveInput = Input.GetKey(InputArray[0]) || Input.GetKey(InputArray[1]) || Input.GetKey(InputArray[2]) || Input.GetKey(InputArray[3]);
+        bool pickupInput = Input.GetKey(InputArray[4]);
         
-        if (m_animator.GetBool(pickUpHash))
+        bool runAnim = m_animator.GetBool(isRunningHash);
+
+
+        if (moveInput)
         {
-            if (m_currentTime < m_time)
+            if (PlayerMovement.m_canMove)
             {
-                m_currentTime += Time.deltaTime;
+                m_animator.SetBool(isRunningHash, true);
             }
-            else
+            else if (runAnim)
             {
-                m_animator.SetBool(pickUpHash, false);
+                m_animator.SetBool(isRunningHash, false);
             }
         }
-        
-        if (m_animator.GetBool(pickUpHash) != PlayerMovement.m_canMove)
-            m_animator.SetBool(canMoveHash, PlayerMovement.m_canMove);
-        
-        bool l_forwardPressed = Input.GetKey(InputArray[0]) || Input.GetKey(InputArray[1]) || Input.GetKey(InputArray[2]) || Input.GetKey(InputArray[3]);
-        bool l_isEPressed = Input.GetKey(InputArray[4]);
-
-        bool l_isRunning = m_animator.GetBool(isRunningHash);
-
-        if (l_isEPressed)
+        else
         {
+            if (runAnim)
+            {
+                m_animator.SetBool(isRunningHash, false);
+            }
+        }
+
+        if (pickupInput && !m_animator.GetBool(pickUpHash))
+        {
+            Debug.Log("yo");
             m_animator.SetBool(pickUpHash, true);
         }
+        
+        
+        // if (m_animator.GetBool(pickUpHash) != PlayerMovement.m_canMove) {
+        //     m_animator.SetBool(canMoveHash, PlayerMovement.m_canMove);
+        // }
+        //
+        // if (pickupInput) {
+        //     m_animator.SetBool(pickUpHash, true);
+        // }
+        //
+        //
+        // if (moveInput && !runAnim) {
+        //     m_animator.SetBool(isRunningHash, true);
+        // }
+        //
+        // if (!moveInput && runAnim) {
+        //     m_animator.SetBool(isRunningHash, false);
+        // }
 
-        if (l_forwardPressed && !l_isRunning)
-        {
-            m_animator.SetBool(isRunningHash, true);
-        }
-        if (!l_forwardPressed && l_isRunning)
-        {
-            m_animator.SetBool(isRunningHash, false);
-        }
-
-        if (transform.position.magnitude >= 0.01f){
+        //Reset Position/Rotation
+        if (transform.position.magnitude >= 0.1f){
             transform.position = m_position;
         }
-        if (Mathf.Abs(transform.rotation.y) >= 0.01f){
+        if (Mathf.Abs(transform.rotation.y) >= 0.1f){
             transform.rotation = m_rotation;
         }
-        
     }
 }
