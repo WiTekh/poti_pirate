@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: ad71580ecfc704331bb09e7a9d2b4e7c, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 508d372a789ad4bada0a0fda721d9e6e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1207,7 +1207,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0358975, y: 1}
+    m_SensorSize: {x: 2.0538461, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1769,7 +1769,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0358975, y: 1}
+    m_SensorSize: {x: 2.0538461, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1991,7 +1991,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0358975, y: 1}
+    m_SensorSize: {x: 2.0538461, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2573,7 +2573,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0358975, y: 1}
+    m_SensorSize: {x: 2.0538461, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2793,7 +2793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea18e511728d47e284582842e283886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 1991409579}
+  escMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
   TransitionMenu: {fileID: 0}
   Player: {fileID: 0}
 --- !u!4 &1960978014
