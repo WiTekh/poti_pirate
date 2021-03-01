@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class AiBehavior : MonoBehaviour
 { 
-    [SerializeField] Transform charo;
+    private static Transform charo;
     public float speed = 2f;
     public int life = 1;
-    
+
+    private void Start()
+    {
+        charo = GameObject.Find("military(Clone)").transform;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,10 +31,10 @@ public class AiBehavior : MonoBehaviour
         {
             if (hitCollider.CompareTag("Player"))
             {
-               transform.position = Vector3.MoveTowards(transform.position, charo.position, speed * Time.deltaTime);
-               Vector3 direction = transform.position - charo.position;
-               Quaternion rotation = Quaternion.LookRotation(direction);
-               transform.rotation = Quaternion.Lerp(transform.rotation, rotation, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, charo.position, speed * Time.deltaTime);
+                Vector3 direction = transform.position - charo.position;
+                Quaternion rotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, speed * Time.deltaTime) ;
             }
         }
     }
