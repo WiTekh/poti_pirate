@@ -5,22 +5,30 @@ public class MenuButtonManager : MonoBehaviour
 {
     public GameObject boatSelectionMenu;
     public GameObject mainMenu;
-    
+    public GameObject settingsMenu;
+
     public void Play()
     {
         mainMenu.SetActive(false);
         boatSelectionMenu.SetActive(true);
     }
 
-    public void Back()
+    public void BackBoat()
     {
         mainMenu.SetActive(true);
         boatSelectionMenu.SetActive(false);
     }
-
+    
+    public void BackSettings()
+    {
+        mainMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+    }
+    
     public void Settings()
     {
-        Debug.Log("Opening Settings..");
+        settingsMenu.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
     public void Quit()
