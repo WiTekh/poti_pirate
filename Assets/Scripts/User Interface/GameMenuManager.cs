@@ -56,5 +56,7 @@ public class GameMenuManager : MonoBehaviour
     {
         TransitionMenu.SetActive(false);
         Player.GetComponent<new_TPS_Movement.new_TPS_Movement>().m_canMove = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

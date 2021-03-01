@@ -6,6 +6,8 @@
     public static int cannonball = 0;
     public static bool treasure = false;
 
+    public static int monbato;
+    
     public static bool isDed = false;
     public static bool isSafe = false;
 }
