@@ -2249,10 +2249,10 @@ GameObject:
   - component: {fileID: 7897308169198754459}
   - component: {fileID: 7918409357129639319}
   - component: {fileID: 7910392901415344075}
-  - component: {fileID: 7887410025520786329}
   - component: {fileID: 7896756338402169646}
   - component: {fileID: 7896756338402169649}
   - component: {fileID: 1094286135285122293}
+  - component: {fileID: 4433534441485281902}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -2327,20 +2327,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7887410025520786329
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7896331375960711825}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 8b789d87091534ae1b9aa8dc162c1a78, type: 3}
 --- !u!54 &7896756338402169646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2386,6 +2372,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8b789d87091534ae1b9aa8dc162c1a78, type: 3}
+--- !u!114 &4433534441485281902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896331375960711825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b610ffaecac2446a483f94c19aeac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7896756338203456954
 GameObject:
   m_ObjectHideFlags: 0
