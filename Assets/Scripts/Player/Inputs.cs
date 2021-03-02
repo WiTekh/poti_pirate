@@ -11,12 +11,12 @@ public static class Inputs
      * 8 - Repair
      */
 
-    public static string[] InputArray = new string[]
+    public static KeyCode[] InputArray = new KeyCode[]
     {
-        "w", "s",
-        "a", "d",
-        "e", "z",
-        "q", "e",
-        "r"
+        KeyCode.W, KeyCode.S,
+        KeyCode.A, KeyCode.D,
+        KeyCode.E, KeyCode.Z,
+        KeyCode.Q, KeyCode.E,
+        KeyCode.R
     };
 }

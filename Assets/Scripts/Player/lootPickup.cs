@@ -37,10 +37,8 @@ public class lootPickup : MonoBehaviour
                     {
                         switch (hitCollider.gameObject.name)
                         {
+                            case "Apple" :
                             case "Banana" :
-                                Inventory.food++;
-                                break;
-                            case "Coconut" :
                                 Inventory.food++;
                                 break;
                             case "Treasure" :
