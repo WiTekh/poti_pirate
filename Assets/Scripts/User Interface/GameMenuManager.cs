@@ -8,6 +8,7 @@ public class GameMenuManager : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject TransitionMenu;
     public GameObject Player;
+    public GameObject Victory;
 
     private bool m_isOpen = false;
     private bool m_isCursorVisible = false;
