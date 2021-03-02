@@ -7,7 +7,7 @@ using static Inputs;
 public class boatController : MonoBehaviour
 {
     [SerializeField] private bool m_isMoving;
-    [SerializeField] private float m_speed;
+    public float m_speed;
     [SerializeField] private float m_rotateSpeed;
     private void Update()
     {

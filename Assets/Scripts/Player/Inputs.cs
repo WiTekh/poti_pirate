@@ -8,6 +8,7 @@ public static class Inputs
      * 2 - Left             * 3 - Right
      * 4 - Pickup           * 5 - boatMoveForward
      * 6 - boatShootLeft   * 7 - boatShootRight
+     * 8 - Repair
      */
 
     public static string[] InputArray = new string[]
@@ -15,6 +16,7 @@ public static class Inputs
         "w", "s",
         "a", "d",
         "e", "z",
-        "q", "e"
+        "q", "e",
+        "r"
     };
 }
