@@ -13,6 +13,8 @@ public class escapeZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Time.timeScale = 0f;
+            
             Transitionning = true;
             confirm.SetActive(true);
             

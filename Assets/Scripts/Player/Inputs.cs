@@ -8,13 +8,15 @@ public static class Inputs
      * 2 - Left             * 3 - Right
      * 4 - Pickup           * 5 - boatMoveForward
      * 6 - boatShootLeft   * 7 - boatShootRight
+     * 8 - Repair
      */
 
-    public static string[] InputArray = new string[]
+    public static KeyCode[] InputArray = new KeyCode[]
     {
-        "w", "s",
-        "a", "d",
-        "e", "z",
-        "q", "e"
+        KeyCode.W, KeyCode.S,
+        KeyCode.A, KeyCode.D,
+        KeyCode.E, KeyCode.Z,
+        KeyCode.Q, KeyCode.E,
+        KeyCode.R
     };
 }

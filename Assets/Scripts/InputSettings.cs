@@ -17,9 +17,10 @@ public class InputSettings : MonoBehaviour
 
         if (waitngForInput)
         {
-            if(Input.inputString.Length <= 0)return;
-
-            Inputs.InputArray[pos] = Input.inputString;
+            if (Input.inputString.Length <= 0) return;
+            string inputo = Input.inputString[0].ToString();
+            
+            Inputs.InputArray[pos] = (KeyCode) Enum.Parse(typeof(KeyCode), inputo);
             waitngForInput = false;
         }
     }
