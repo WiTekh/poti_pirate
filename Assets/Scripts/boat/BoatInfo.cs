@@ -57,12 +57,12 @@ public class BoatInfo : MonoBehaviour
         if (Inventory.food <= 0 && Fed == false)
         {
             Fed = true;
-            boat.m_speed /= 4;
+            boat.m_speed = 2;
         }
 
         if (Inventory.food > 0 && Fed)
         {
-            boat.m_speed *= 4;
+            boat.m_speed = 5;
             Fed = false;
         }
         
