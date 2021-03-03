@@ -6,6 +6,12 @@ using System.IO;
 public class proceduralGen : MonoBehaviour {
 
     public const float maxViewDst = 64;
+
+    [Header("End Island Spawn")]
+    [SerializeField] private Vector3 spawnPoint;
+    [SerializeField] private float spawnBiasX;
+    [SerializeField] private float spawnBiasZ;
+
     
     public static Transform viewer;
     public static GameObject waterPlane;

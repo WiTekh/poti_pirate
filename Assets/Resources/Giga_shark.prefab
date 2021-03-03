@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6223932358734363037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6223932358734363039}
+  - component: {fileID: 6223932358734363038}
+  m_Layer: 0
+  m_Name: Giga_shark
+  m_TagString: Ennemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6223932358734363039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6223932358734363037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 33.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3153293077858317139}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6223932358734363038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6223932358734363037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e933c52e66ed2524fa19701dca5091c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  life: 1
+--- !u!1001 &541319946278497686
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6223932358734363039}
+    m_Modifications:
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528671007, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_Name
+      value: shark
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528671007, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ennemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2421487216287112773, guid: 82938ef9aa7c9b34baf2f0ae3eae3949, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 82938ef9aa7c9b34baf2f0ae3eae3949, type: 3}
+--- !u!4 &3153293077858317139 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3188997993528434373, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+    type: 3}
+  m_PrefabInstance: {fileID: 541319946278497686}
+  m_PrefabAsset: {fileID: 0}
