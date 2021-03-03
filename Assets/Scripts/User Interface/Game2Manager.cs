@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Cinemachine;
 using UnityEngine;
 
@@ -16,13 +17,13 @@ public class Game2Manager : MonoBehaviour
         switch (boat_choice)
         {
             case 0:
-                boat = Instantiate(Resources.Load("military") as GameObject, transform);
+                boat = Instantiate(Resources.Load(Path.Combine("boats", "military")) as GameObject, transform);
                 break;
             case 1:
-                boat = Instantiate(Resources.Load("boat-fishing") as GameObject, transform);
+                boat = Instantiate(Resources.Load(Path.Combine("boats", "boat-fishing")) as GameObject, transform);
                 break;
             case 2:
-                boat = Instantiate(Resources.Load("Boat") as GameObject, transform);
+                boat = Instantiate(Resources.Load(Path.Combine("boats", "Boat")) as GameObject, transform);
                 break;
         }
 
