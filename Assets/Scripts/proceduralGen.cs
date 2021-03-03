@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Random = System.Random;
 
 public class proceduralGen : MonoBehaviour {
 
@@ -9,33 +11,44 @@ public class proceduralGen : MonoBehaviour {
 
     [Header("End Island Spawn")]
     [SerializeField] private Vector3 spawnPoint;
-    [SerializeField] private float spawnBiasX;
-    [SerializeField] private float spawnBiasZ;
-
+    [SerializeField] private int spawnBiasX;
+    [SerializeField] private int spawnBiasZ;
     
+    private static Vector3 computedSP;
+
     public static Transform viewer;
-    public static GameObject waterPlane;
     public static Vector2 viewerPosition;
-    
-    int chunkSize;
-    int chunksVisibleInViewDst;
 
-    Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
-    List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
+    private static GameObject endIsland;
+    public static GameObject waterPlane;
 
-    void Start() {
-        chunkSize = 32;
+    private static int chunkSize;
+    private int chunksVisibleInViewDst;
+
+    private Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
+    private List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
+
+    void Start() 
+    {
+        Random rand = new Random();
+        computedSP = new Vector3(rand.Next(-spawnBiasX, spawnBiasX+1), 0 , rand.Next(-spawnBiasZ, spawnBiasZ+1)) + spawnPoint;
+        Debug.Log($"Island at : {computedSP}");
+
+            chunkSize = 32;
         chunksVisibleInViewDst = Mathf.RoundToInt(maxViewDst / chunkSize);
+        
         waterPlane = Resources.Load("waterPlane") as GameObject;
+        endIsland = Resources.Load("end-island") as GameObject;
     }
 
-    void Update() {
+    void Update() 
+    {
         viewerPosition = new Vector2 (viewer.position.x, viewer.position.z);
         UpdateVisibleChunks ();
     }
         
-    void UpdateVisibleChunks() {
-
+    void UpdateVisibleChunks() 
+    {
         for (int i = 0; i < terrainChunksVisibleLastUpdate.Count; i++) {
             terrainChunksVisibleLastUpdate[i].SetVisible (false);
         }
@@ -75,6 +88,13 @@ public class proceduralGen : MonoBehaviour {
             meshObject.transform.position = positionV3;
             meshObject.transform.parent = parent;
             SetVisible(false);
+            
+            //SpawnEndIsland ?
+            
+            if ((computedSP.x < position.x + chunkSize/2 && computedSP.x > position.x - chunkSize/2) && (computedSP.z < position.y + chunkSize/2 && computedSP.z > position.y - chunkSize/2))
+            {
+                Instantiate(endIsland, computedSP, Quaternion.Euler(-90f, 0f, 0f));
+            }
         }
 
         public void UpdateTerrainChunk() {
