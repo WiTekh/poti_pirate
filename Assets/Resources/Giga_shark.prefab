@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6223932358734363039}
   - component: {fileID: 6223932358734363038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Giga_shark
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e933c52e66ed2524fa19701dca5091c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charo: {fileID: 0}
   speed: 3
   life: 1
 --- !u!1001 &541319946278497686
@@ -132,6 +133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Ennemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188997993528671007, guid: 82938ef9aa7c9b34baf2f0ae3eae3949,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2421487216287112773, guid: 82938ef9aa7c9b34baf2f0ae3eae3949, type: 3}

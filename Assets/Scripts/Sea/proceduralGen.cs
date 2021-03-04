@@ -97,27 +97,27 @@ public class proceduralGen : MonoBehaviour {
                 Instantiate(endIsland, computedSP, Quaternion.Euler(-90f, 0f, 0f));
             }
             
-            //SpawnSharks
-            // - Determine number
-            if (Mathf.Abs(position.x) > Mathf.Abs(GameObject.Find("full-island").transform.position.x) + noSharkZone && Mathf.Abs(position.y) > Mathf.Abs(GameObject.Find("full-island").transform.position.z) + noSharkZone)
-            {
-                Random rand = new Random();
-                float rProb = (float) rand.NextDouble();
-                nbOfSharks =
-                    rProb <= 0.3f ? 0 :
-                    rProb <= 0.9f ? 1 : 2; //30% chance of having no shark | 60% of having 1 | 10% of having 2
-
-                for (int i = 0; i < nbOfSharks + 1; i++)
-                {
-                    // - Determine spawnPoints
-                    Vector3 pos =
-                        new Vector3(rand.Next(-chunkSize / 2,chunkSize / 2), 0f, rand.Next(-chunkSize / 2,chunkSize / 2));
-                    // - Spawn Sharks
-                    GameObject oo = Instantiate(shark, meshObject.transform);
-                    oo.transform.localPosition = pos;
-
-                }
-            }
+            // //SpawnSharks
+            // // - Determine number
+            // if (Mathf.Abs(position.x) > Mathf.Abs(GameObject.Find("full-island").transform.position.x) + noSharkZone && Mathf.Abs(position.y) > Mathf.Abs(GameObject.Find("full-island").transform.position.z) + noSharkZone)
+            // {
+            //     Random rand = new Random();
+            //     float rProb = (float) rand.NextDouble();
+            //     nbOfSharks =
+            //         rProb <= 0.3f ? 0 :
+            //         rProb <= 0.9f ? 1 : 2; //30% chance of having no shark | 60% of having 1 | 10% of having 2
+            //
+            //     for (int i = 0; i < nbOfSharks + 1; i++)
+            //     {
+            //         // - Determine spawnPoints
+            //         Vector3 pos =
+            //             new Vector3(rand.Next(-chunkSize / 2,chunkSize / 2), 0f, rand.Next(-chunkSize / 2,chunkSize / 2));
+            //         // - Spawn Sharks
+            //         GameObject oo = Instantiate(shark, meshObject.transform);
+            //         oo.transform.localPosition = pos;
+            //
+            //     }
+            // }
         }
 
         public void UpdateTerrainChunk() {
