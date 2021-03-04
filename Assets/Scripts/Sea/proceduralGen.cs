@@ -78,6 +78,8 @@ public class proceduralGen : MonoBehaviour {
         GameObject meshObject;
         Vector2 position;
         Bounds bounds;
+
+        private int nbOfSharks;
         
         public TerrainChunk(Vector2 coord, int size, Transform parent) {
             position = coord * size;
@@ -89,12 +91,16 @@ public class proceduralGen : MonoBehaviour {
             meshObject.transform.parent = parent;
             SetVisible(false);
             
-            //SpawnEndIsland ?
-            
+            //SpawnEndIsland 
             if ((computedSP.x < position.x + chunkSize/2 && computedSP.x > position.x - chunkSize/2) && (computedSP.z < position.y + chunkSize/2 && computedSP.z > position.y - chunkSize/2))
             {
                 Instantiate(endIsland, computedSP, Quaternion.Euler(-90f, 0f, 0f));
             }
+            
+            //SpawnSharks
+            Random rand = new Random();
+            float rProb = (float) rand.NextDouble();
+            nbOfSharks = rProb <= 0.3f ? 0 : rProb <= 0.9f ? 1 : 2; //30% chance of having no shark | 60% of having 1 | 10% of having 2
         }
 
         public void UpdateTerrainChunk() {
