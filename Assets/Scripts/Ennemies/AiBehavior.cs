@@ -7,10 +7,12 @@ public class AiBehavior : MonoBehaviour
 { 
     private static Transform charo;
     public float speed = 2f;
+    private float timer;
     public int life = 1;
 
     private void Start()
     {
+        timer = 0;
         charo = GameObject.Find("military(Clone)").transform;
     }
 
@@ -36,14 +38,6 @@ public class AiBehavior : MonoBehaviour
                 Quaternion rotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, speed * Time.deltaTime) ;
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            life--;
         }
     }
 }
