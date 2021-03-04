@@ -9,6 +9,9 @@ public class lootPickup : MonoBehaviour
     private float tictac = 0;
     private bool PickupAct = true;
 
+    private GameObject guide;
+    private bool first = false;
+
     void Update()
     {
         if (tictac > 2f)
@@ -74,6 +77,16 @@ public class lootPickup : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (first)
+        {
+            guideManager gM = guide.GetComponent<guideManager>();
+            gM.ShowGuide(2);
+            first = false;
         }
     }
 }
