@@ -15,7 +15,7 @@ public class guideManager : MonoBehaviour
     public bool[] guidesSaw;
 
     [Header("Settings")]
-    [SerializeField] private float timeOnScreen;
+    private float timeOnScreen;
     
     //Private variables
     public float currentTime = 0f;
@@ -25,7 +25,7 @@ public class guideManager : MonoBehaviour
     private void Start()
     {
         guidesSaw = new bool[guides.Length];
-        ShowGuide(0);
+        ShowGuide(0, 5f);
         guidesSaw[0] = true;
     }
 
@@ -62,11 +62,16 @@ public class guideManager : MonoBehaviour
 
     }
 
-    public void ShowGuide(int guide)
+    public void ShowGuide(int guide, float customTime = 3f)
     {
-        guideShowing = true;
-        guideShown = guide;
-        guides[guide].SetActive(true);
-        guidesSaw[guide] = true;
+        if (!guideShowing)
+        {
+            if (customTime != 3f)
+                timeOnScreen = customTime;
+            guideShowing = true;
+            guideShown = guide;
+            guides[guide].SetActive(true);
+            guidesSaw[guide] = true;
+        }
     }
 }

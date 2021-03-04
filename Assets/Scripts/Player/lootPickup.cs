@@ -10,7 +10,12 @@ public class lootPickup : MonoBehaviour
     private bool PickupAct = true;
 
     private GameObject guide;
-    private bool first = false;
+    private bool first = true;
+
+    private void Start()
+    {
+        guide = GameObject.Find("Guide");
+    }
 
     void Update()
     {
@@ -68,6 +73,13 @@ public class lootPickup : MonoBehaviour
 
             if (hitCollider.CompareTag("WaterZone"))
             {
+                if (first)
+                {
+                    guideManager gM = guide.GetComponent<guideManager>();
+                    gM.ShowGuide(2);
+                    first = false;
+                }
+                
                 if (PickupAct)
                 {
                     if (Input.GetKeyDown(InputArray[4]))
@@ -82,11 +94,6 @@ public class lootPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (first)
-        {
-            guideManager gM = guide.GetComponent<guideManager>();
-            gM.ShowGuide(2);
-            first = false;
-        }
+
     }
 }
