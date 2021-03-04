@@ -15,13 +15,14 @@ public class proceduralGen : MonoBehaviour {
     [SerializeField] private int spawnBiasZ;
     
     private static Vector3 computedSP;
-
     public static Transform viewer;
     public static Vector2 viewerPosition;
 
+    private static GameObject shark;
     private static GameObject endIsland;
     public static GameObject waterPlane;
 
+    private static int noSharkZone = 20;
     private static int chunkSize;
     private int chunksVisibleInViewDst;
 
@@ -33,12 +34,12 @@ public class proceduralGen : MonoBehaviour {
         Random rand = new Random();
         computedSP = new Vector3(rand.Next(-spawnBiasX, spawnBiasX+1), 0 , rand.Next(-spawnBiasZ, spawnBiasZ+1)) + spawnPoint;
         Debug.Log($"Island at : {computedSP}");
-
-            chunkSize = 32;
+        chunkSize = 32;
         chunksVisibleInViewDst = Mathf.RoundToInt(maxViewDst / chunkSize);
         
         waterPlane = Resources.Load("waterPlane") as GameObject;
         endIsland = Resources.Load("end-island") as GameObject;
+        shark = Resources.Load("Giga_shark") as GameObject;
     }
 
     void Update() 
@@ -84,12 +85,11 @@ public class proceduralGen : MonoBehaviour {
         public TerrainChunk(Vector2 coord, int size, Transform parent) {
             position = coord * size;
             bounds = new Bounds(position,Vector2.one * size);
-            Vector3 positionV3 = new Vector3(position.x,parent.position.y,position.y);
+            Vector3 positionV3 = new Vector3(position.x, parent.position.y,position.y);
 
             meshObject = Instantiate(waterPlane, positionV3, Quaternion.identity);
             meshObject.transform.position = positionV3;
             meshObject.transform.parent = parent;
-            SetVisible(false);
             
             //SpawnEndIsland 
             if ((computedSP.x < position.x + chunkSize/2 && computedSP.x > position.x - chunkSize/2) && (computedSP.z < position.y + chunkSize/2 && computedSP.z > position.y - chunkSize/2))
@@ -98,9 +98,26 @@ public class proceduralGen : MonoBehaviour {
             }
             
             //SpawnSharks
-            Random rand = new Random();
-            float rProb = (float) rand.NextDouble();
-            nbOfSharks = rProb <= 0.3f ? 0 : rProb <= 0.9f ? 1 : 2; //30% chance of having no shark | 60% of having 1 | 10% of having 2
+            // - Determine number
+            if (Mathf.Abs(position.x) > Mathf.Abs(GameObject.Find("full-island").transform.position.x) + noSharkZone && Mathf.Abs(position.y) > Mathf.Abs(GameObject.Find("full-island").transform.position.z) + noSharkZone)
+            {
+                Random rand = new Random();
+                float rProb = (float) rand.NextDouble();
+                nbOfSharks =
+                    rProb <= 0.3f ? 0 :
+                    rProb <= 0.9f ? 1 : 2; //30% chance of having no shark | 60% of having 1 | 10% of having 2
+
+                for (int i = 0; i < nbOfSharks + 1; i++)
+                {
+                    // - Determine spawnPoints
+                    Vector3 pos =
+                        new Vector3(rand.Next(-chunkSize / 2,chunkSize / 2), 0f, rand.Next(-chunkSize / 2,chunkSize / 2));
+                    // - Spawn Sharks
+                    GameObject oo = Instantiate(shark, meshObject.transform);
+                    oo.transform.localPosition = pos;
+
+                }
+            }
         }
 
         public void UpdateTerrainChunk() {

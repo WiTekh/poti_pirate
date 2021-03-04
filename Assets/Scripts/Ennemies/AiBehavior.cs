@@ -13,7 +13,7 @@ public class AiBehavior : MonoBehaviour
     private void Start()
     {
         timer = 0;
-        charo = GameObject.Find("military(Clone)").transform;
+        charo = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame

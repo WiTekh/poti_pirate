@@ -3826,7 +3826,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.025707, y: 1}
+    m_SensorSize: {x: 1.8671329, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4142,7 +4142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -99.06262}
+  m_AnchoredPosition: {x: 0, y: -99.0625}
   m_SizeDelta: {x: 446.58466, y: 62.993805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132463962
@@ -4750,7 +4750,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.025707, y: 1}
+    m_SensorSize: {x: 1.8671329, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5709,7 +5709,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.025707, y: 1}
+    m_SensorSize: {x: 1.8671329, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6360,7 +6360,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.025707, y: 1}
+    m_SensorSize: {x: 1.8671329, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7500,6 +7500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Giga_shark
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223932358734363037, guid: cdeebfe37174249bea5f6be0024dcda4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6223932358734363039, guid: cdeebfe37174249bea5f6be0024dcda4,
         type: 3}
