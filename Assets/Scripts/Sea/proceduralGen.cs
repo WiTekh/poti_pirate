@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class proceduralGen : MonoBehaviour {
@@ -14,7 +15,7 @@ public class proceduralGen : MonoBehaviour {
     [SerializeField] private int spawnBiasX;
     [SerializeField] private int spawnBiasZ;
     
-    private static Vector3 computedSP;
+    public static Vector3 computedSP;
     public static Transform viewer;
     public static Vector2 viewerPosition;
 
