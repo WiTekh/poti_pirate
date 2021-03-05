@@ -58,24 +58,17 @@ public class boatShoot : MonoBehaviour
 
     void UpdateCannonsRotations()
     {
-        Collider sharkLeft = null;
-        Collider sharkRight = null;
-
-        if (sharkLeft != null)
-        {
-            m_rightShoot.LookAt(sharkLeft.transform);
-        }
-
-        if (sharkRight != null)
-        {
-            m_leftShoot.LookAt(sharkRight.transform);
-        }
+        GameObject leftShawk = m_leftShoot.GetComponent<detectiveShark>().leWequin;
+        GameObject rightShawk = m_rightShoot.GetComponent<detectiveShark>().leWequin;
+        
+        m_leftShoot.LookAt(leftShawk.transform);
+        m_rightShoot.LookAt(rightShawk.transform);
     }
     void InstantiateCanonball(Transform p_parent, bool p_left)
     {
         GameObject l_insted = Instantiate(m_cannonBall, p_parent);
         
         l_insted.transform.parent = p_parent;
-        l_insted.GetComponent<Rigidbody>().AddForce((p_left ? -p_parent.right : p_parent.right) * 25f, ForceMode.Impulse);
+        l_insted.GetComponent<Rigidbody>().AddForce(p_parent.forward * 25f, ForceMode.Impulse);
     }
 }
