@@ -17,6 +17,10 @@ public class BoatInfo : MonoBehaviour
     private bool Fed;
     private bool Touched;
     private bool Repairing;
+
+    private float timerfood = 8f; 
+    private float timerwater = 7f;
+    
     private boatController boat;
 
     private void Start()
@@ -40,8 +44,7 @@ public class BoatInfo : MonoBehaviour
             Inventory.food += 10;
             Inventory.water += 20;
         }
-
-
+        
         if (Touched)
         {
             timer += Time.deltaTime;
@@ -54,6 +57,17 @@ public class BoatInfo : MonoBehaviour
 
         // FOOD
 
+        if (Inventory.food > 0)
+        {
+            timerfood -= Time.deltaTime;
+        }
+
+        if (timerfood <= 0)
+        {
+            timerfood = 8f;
+            Inventory.food--;
+        }
+        
         if (Inventory.food <= 0 && Fed == false)
         {
             Fed = true;
@@ -86,8 +100,39 @@ public class BoatInfo : MonoBehaviour
         {
             timerRepair += Time.deltaTime;
         }
+        // LIFE
+
+        if (helth.value <= 0)
+        {
+            GameOver();
+        }
+        
+        // WATER
+
+        if (Inventory.water <= 0)
+        {
+            GameOver();    
+        }
+        
+        if (Inventory.water > 0)
+        {
+            timerwater -= Time.deltaTime;
+        }
+
+        if (timerwater <= 0)
+        {
+            timerwater = 7f;
+            Inventory.water--;
+        }
     }
 
+    // GAME OVER
+
+    private void GameOver()
+    {
+        Debug.Log("You lost");
+    }
+    
     // VICTORY
     
     private void OnTriggerEnter(Collider other)
@@ -99,6 +144,15 @@ public class BoatInfo : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
+        
+        if(other.CompareTag("Crate"))
+        {
+            Inventory.planks += 4;
+            Inventory.food += 3;
+            Inventory.cannonball += 4;
+            Inventory.water += 3;
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnCollisionStay(Collision other)
@@ -109,4 +163,5 @@ public class BoatInfo : MonoBehaviour
             helth.value--;
         }
     }
+
 }
