@@ -2,16 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class AiBehavior : MonoBehaviour
 { 
-    [SerializeField] private Transform charo;
+    private Transform charo;
     public float speed = 2f;
     private float timer;
     public int life = 1;
+    private Random rand;
+    private int chance;
 
     private void Start()
     {
+        rand = new Random();
         timer = 0;
         charo = GameObject.FindWithTag("Player").transform;
     }
@@ -22,16 +26,20 @@ public class AiBehavior : MonoBehaviour
         Target();
         if (life <= 0)
         {
+            chance = rand.Next(3);
+            if (chance == 1)
+            {
+                Debug.Log("poof");
+                Instantiate(Resources.Load("crate-box-traingle"), transform.position, transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
 
     void Target()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 20f, ~(1<<8));
-        
-        if (hitColliders[0] != null) Debug.Log(hitColliders[0].name);
-        
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 30f, ~(1<<8));
+
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Player"))
