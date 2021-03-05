@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class BoatInfo : MonoBehaviour
 {
     private GameObject victory;
+    private GameObject Gameover;
     private Slider helth;
     private int healthstag = 2;
     private int repairtime = 3;
@@ -25,6 +26,8 @@ public class BoatInfo : MonoBehaviour
 
     private void Start()
     {
+        Gameover = GameObject.Find("GameOver");
+        Gameover.SetActive(false);
         victory = GameObject.Find("Victory");
         victory.SetActive(false);
         boat = GetComponent<boatController>();
@@ -130,7 +133,9 @@ public class BoatInfo : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("You lost");
+        Gameover.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     
     // VICTORY
