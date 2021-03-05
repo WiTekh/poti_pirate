@@ -29,71 +29,75 @@ public class lootPickup : MonoBehaviour
         {
             tictac += Time.deltaTime;
         }
-        Pickup(transform.position, 2f);
+        
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f, ~(1 << 8));
+
+        if (hitColliders.Length > 1)
+        {
+            Pickup(hitColliders);
+        }
     }
 
-    void Pickup(Vector3 center, float radius)
+    void Pickup(Collider[] overlapColl)
     {
-        Collider[] hitColliders = Physics.OverlapSphere(center, radius,~(1<<8));
-        foreach (var hitCollider in hitColliders)
+        if (overlapColl.Length != 0)
         {
-            if (hitCollider.CompareTag("Pickup"))
+            foreach (var hitCollider in overlapColl)
             {
-                if (PickupAct)
+                if (hitCollider.CompareTag("Pickup"))
                 {
-                    if (Input.GetKeyDown(InputArray[4]))
+                    if (PickupAct)
                     {
-                        switch (hitCollider.gameObject.name)
+                        if (Input.GetKeyDown(InputArray[4]))
                         {
-                            case "Apple" :
-                            case "Banana" :
-                                Inventory.food++;
-                                break;
-                            case "Treasure" :
-                                Inventory.treasure = true;
-                                break;
-                            case "Cannonball" :
-                                Inventory.cannonball++;
-                                break;
-                            case "Cannonballs" :
-                                Inventory.cannonball+=3;
-                                break;
-                            case "Plank" :
-                                Inventory.planks++;
-                                break;
-                            case "Planks" :
-                                Inventory.planks+=3;
-                                break;
+                            switch (hitCollider.gameObject.name)
+                            {
+                                case "Apple":
+                                case "Banana":
+                                    Inventory.food++;
+                                    break;
+                                case "Treasure":
+                                    Inventory.treasure = true;
+                                    break;
+                                case "Cannonball":
+                                    Inventory.cannonball++;
+                                    break;
+                                case "Cannonballs":
+                                    Inventory.cannonball += 3;
+                                    break;
+                                case "Plank":
+                                    Inventory.planks++;
+                                    break;
+                                case "Planks":
+                                    Inventory.planks += 3;
+                                    break;
+                            }
+
+                            Destroy(hitCollider.gameObject);
+                            PickupAct = false;
                         }
-                        Destroy(hitCollider.gameObject);
-                        PickupAct = false;
                     }
                 }
-            }
 
-            if (hitCollider.CompareTag("WaterZone"))
-            {
-                if (first)
+                if (hitCollider.CompareTag("WaterZone"))
                 {
-                    guideManager gM = guide.GetComponent<guideManager>();
-                    gM.ShowGuide(2);
-                    first = false;
-                }
-                
-                if (PickupAct)
-                {
-                    if (Input.GetKeyDown(InputArray[4]))
+                    if (first)
                     {
-                        Inventory.water+=2;
-                        PickupAct = false;
+                        guideManager gM = guide.GetComponent<guideManager>();
+                        gM.ShowGuide(2);
+                        first = false;
+                    }
+
+                    if (PickupAct)
+                    {
+                        if (Input.GetKeyDown(InputArray[4]))
+                        {
+                            Inventory.water += 2;
+                            PickupAct = false;
+                        }
                     }
                 }
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
     }
 }
