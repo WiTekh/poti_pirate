@@ -58,6 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   life: 1
+  sharkSpeed: 100
 --- !u!1001 &541319946278497686
 PrefabInstance:
   m_ObjectHideFlags: 0

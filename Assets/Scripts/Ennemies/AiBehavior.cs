@@ -12,6 +12,7 @@ public class AiBehavior : MonoBehaviour
     public int life = 1;
     private Random rand;
     private int chance;
+    private bool boolo;
 
     private void Start()
     {
@@ -26,16 +27,25 @@ public class AiBehavior : MonoBehaviour
         Target();
         if (life <= 0)
         {
-            chance = rand.Next(3);
+            chance = rand.Next(2);
+            Debug.Log(chance);
             if (chance == 1)
             {
-                Debug.Log("poof");
                 Instantiate(Resources.Load("crate-box-traingle"), transform.position, transform.rotation);
             }
             Destroy(gameObject);
         }
+
+        if (!boolo)
+            Move();
     }
 
+    void Move()
+    {
+        transform.position -= transform.forward * Time.deltaTime * speed;
+        transform.Rotate(new Vector3(0f, 1f, 0f));
+    }
+    
     void Target()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 30f, ~(1<<8));
@@ -44,6 +54,7 @@ public class AiBehavior : MonoBehaviour
         {
             if (hitCollider.CompareTag("Player"))
             {
+                boolo = true;
                 transform.position = Vector3.MoveTowards(transform.position, charo.position, speed * Time.deltaTime);
                 Vector3 direction = transform.position - charo.position;
                 Quaternion rotation = Quaternion.LookRotation(direction);
