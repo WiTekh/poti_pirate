@@ -61,24 +61,6 @@ public class animationStateController : MonoBehaviour
             m_animator.SetBool(pickUpHash, true);
         }
         
-        
-        // if (m_animator.GetBool(pickUpHash) != PlayerMovement.m_canMove) {
-        //     m_animator.SetBool(canMoveHash, PlayerMovement.m_canMove);
-        // }
-        //
-        // if (pickupInput) {
-        //     m_animator.SetBool(pickUpHash, true);
-        // }
-        //
-        //
-        // if (moveInput && !runAnim) {
-        //     m_animator.SetBool(isRunningHash, true);
-        // }
-        //
-        // if (!moveInput && runAnim) {
-        //     m_animator.SetBool(isRunningHash, false);
-        // }
-
         //Reset Position/Rotation
         if (transform.position.magnitude >= 0.1f){
             transform.position = m_position;
