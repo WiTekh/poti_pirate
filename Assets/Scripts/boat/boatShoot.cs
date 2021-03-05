@@ -7,10 +7,12 @@ using static Inputs;
 
 public class boatShoot : MonoBehaviour
 {
-    private GameObject m_cannonBall;
     private bool Shot;
     private int shoot_time = 1;
     private float timer;
+    
+    private GameObject m_cannonBall;
+
     [SerializeField] private Transform m_leftShoot;
     [SerializeField] private Transform m_rightShoot;
 
@@ -49,11 +51,30 @@ public class boatShoot : MonoBehaviour
                 InstantiateCanonball(m_rightShoot, false);
             }
         }
-    }
 
+        UpdateCannonsRotations();
+    }
+    
+
+    void UpdateCannonsRotations()
+    {
+        Collider sharkLeft = null;
+        Collider sharkRight = null;
+
+        if (sharkLeft != null)
+        {
+            m_rightShoot.LookAt(sharkLeft.transform);
+        }
+
+        if (sharkRight != null)
+        {
+            m_leftShoot.LookAt(sharkRight.transform);
+        }
+    }
     void InstantiateCanonball(Transform p_parent, bool p_left)
     {
         GameObject l_insted = Instantiate(m_cannonBall, p_parent);
+        
         l_insted.transform.parent = p_parent;
         l_insted.GetComponent<Rigidbody>().AddForce((p_left ? -p_parent.right : p_parent.right) * 25f, ForceMode.Impulse);
     }
