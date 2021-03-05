@@ -11,6 +11,9 @@ public class Timer : MonoBehaviour
     public Text timer;
 
     public GameObject m_DeathPanel;
+    
+    public AudioSource m_chronoASource;
+    private bool m_started10sec = false;
 
     void Start()
     {
@@ -22,7 +25,6 @@ public class Timer : MonoBehaviour
     {
         if (startTime <= 0)
         {
-            
             if (Inventory.isSafe)
             {
                 //Go to phase 2
@@ -41,6 +43,11 @@ public class Timer : MonoBehaviour
         else
         {
             startTime -= Time.deltaTime;
+            if (startTime <= 10 && !m_started10sec)
+            {
+                m_chronoASource.Play();
+                m_started10sec = true;
+            }
         }
         //timer.text = Mathf.Round(startTime).ToString();
         if (Mathf.Floor(startTime % 60) <= 9)
