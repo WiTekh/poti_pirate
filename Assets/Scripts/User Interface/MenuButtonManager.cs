@@ -44,13 +44,15 @@ public class MenuButtonManager : MonoBehaviour
             case 0:
                 Inventory.cannonball = 10;
                 Inventory.planks = 3;
+                Inventory.water += 2;
                 break;
             case 1:
                 Inventory.food = 10;
-                Inventory.water = 10;
+                Inventory.water = 12;
                 break;
             case 2:
                 Inventory.planks = 9;
+                Inventory.water += 2;
                 break;
         }
         SceneManager.LoadScene("Game1");
