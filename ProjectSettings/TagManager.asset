@@ -8,6 +8,7 @@ TagManager:
   - WaterZone
   - Ennemy
   - EndZone
+  - Crate
   layers:
   - Default
   - TransparentFX
