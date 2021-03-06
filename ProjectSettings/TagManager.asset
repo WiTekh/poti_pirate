@@ -9,6 +9,7 @@ TagManager:
   - Ennemy
   - EndZone
   - Crate
+  - Obstacle
   layers:
   - Default
   - TransparentFX

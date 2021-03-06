@@ -19,8 +19,8 @@ public class BoatInfo : MonoBehaviour
     private bool Touched;
     private bool Repairing;
 
-    private float timerfood = 12f; 
-    private float timerwater = 11f;
+    private float timerfood = 15f; 
+    private float timerwater = 12f;
     
     private boatController boat;
 
