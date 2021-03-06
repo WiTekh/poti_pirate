@@ -27,7 +27,7 @@ public class AiBehavior : MonoBehaviour
         Target();
         if (life <= 0)
         {
-            chance = rand.Next(2);
+            chance = rand.Next(3);
             Debug.Log(chance);
             if (chance == 1)
             {

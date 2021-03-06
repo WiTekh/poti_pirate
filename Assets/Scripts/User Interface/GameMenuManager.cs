@@ -9,12 +9,15 @@ public class GameMenuManager : MonoBehaviour
     public GameObject TransitionMenu;
     public GameObject Player;
     public GameObject Victory;
+    public GameObject Death;
 
     private bool m_isOpen = false;
     private bool m_isCursorVisible = false;
 
     private void Start()
     {
+        Death = GameObject.Find("Death");
+        Death.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -50,7 +53,15 @@ public class GameMenuManager : MonoBehaviour
 
     public void Leave()
     {
-        SceneManager.LoadScene("Game2");
+        if (Inventory.treasure == false)
+        {
+            TransitionMenu.SetActive(false);
+            Death.SetActive(true);
+        }
+        else
+        {
+            SceneManager.LoadScene("Game2");
+        }
     }
 
     public void Stay()

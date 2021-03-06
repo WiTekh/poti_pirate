@@ -29,6 +29,7 @@ public class proceduralGen : MonoBehaviour {
 
     private Dictionary<Vector2, TerrainChunk> terrainChunkDictionary = new Dictionary<Vector2, TerrainChunk>();
     private List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
+    
 
     void Start() 
     {
@@ -41,6 +42,13 @@ public class proceduralGen : MonoBehaviour {
         waterPlane = Resources.Load("waterPlane") as GameObject;
         endIsland = Resources.Load("end-island") as GameObject;
         shark = Resources.Load("Giga_shark") as GameObject;
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(spawnPoint,new Vector3(spawnBiasX,10,spawnBiasZ));
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(computedSP,Vector3.one*2);
     }
 
     void Update() 

@@ -19,8 +19,8 @@ public class BoatInfo : MonoBehaviour
     private bool Touched;
     private bool Repairing;
 
-    private float timerfood = 8f; 
-    private float timerwater = 7f;
+    private float timerfood = 12f; 
+    private float timerwater = 11f;
     
     private boatController boat;
 
@@ -67,7 +67,7 @@ public class BoatInfo : MonoBehaviour
 
         if (timerfood <= 0)
         {
-            timerfood = 8f;
+            timerfood = 12f;
             Inventory.food--;
         }
         
@@ -124,7 +124,7 @@ public class BoatInfo : MonoBehaviour
 
         if (timerwater <= 0)
         {
-            timerwater = 7f;
+            timerwater = 11f;
             Inventory.water--;
         }
     }
@@ -163,6 +163,12 @@ public class BoatInfo : MonoBehaviour
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.CompareTag("Ennemy") && Touched == false)
+        {
+            Touched = true;
+            helth.value--;
+        }
+
+        if (other.gameObject.CompareTag("Obstacle") && Touched == false)
         {
             Touched = true;
             helth.value--;
