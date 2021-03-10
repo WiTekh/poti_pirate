@@ -16,7 +16,10 @@ public class UIUpdate : MonoBehaviour
 
     private void Start()
     {
-        this.treasure.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        if (treasure != null)
+            treasure.SetActive(false);
     }
 
     void Update()

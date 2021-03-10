@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isMoving: 0
-  m_speed: 5
-  m_rotateSpeed: 20
+  m_speed: 6
+  m_rotateSpeed: 25
 --- !u!114 &7150575746938957011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9168561784266507504}
   - component: {fileID: 5791901144035599235}
-  - component: {fileID: 5616280643778223863}
+  - component: {fileID: 4891314242733150966}
   m_Layer: 0
   m_Name: CannonLeft
   m_TagString: Untagged
@@ -276,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804458540789593525}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1, y: 0.78, z: 0.37}
+  m_LocalPosition: {x: 0.09, y: 2.48, z: 1.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3192712715448454642}
@@ -295,7 +295,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: -0.37, y: 0.78, z: 15}
---- !u!114 &5616280643778223863
+--- !u!114 &4891314242733150966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1804458540789593525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee03c0757d1da48c5b22d5c3ebb0cf83, type: 3}
+  m_Script: {fileID: 11500000, guid: 235273d55ab0a3745937679357cbaf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leWequin: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3191955082973381476}
   - component: {fileID: 1975137519230857500}
-  - component: {fileID: 2638066854887769735}
+  - component: {fileID: 2772613690860240299}
   m_Layer: 0
   m_Name: CannonRight
   m_TagString: Untagged
@@ -774,7 +774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7836700091442482326}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 0.78, z: 0.37}
+  m_LocalPosition: {x: 0.11, y: 2.55, z: 1.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3192712715448454642}
@@ -793,7 +793,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0.37, y: 0.78, z: 15}
---- !u!114 &2638066854887769735
+--- !u!114 &2772613690860240299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7836700091442482326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee03c0757d1da48c5b22d5c3ebb0cf83, type: 3}
+  m_Script: {fileID: 11500000, guid: 235273d55ab0a3745937679357cbaf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leWequin: {fileID: 0}

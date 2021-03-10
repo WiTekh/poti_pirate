@@ -9,12 +9,16 @@ public class GameMenuManager : MonoBehaviour
     public GameObject TransitionMenu;
     public GameObject Player;
     public GameObject Victory;
-
+    public GameObject Death;
+    
     private bool m_isOpen = false;
     private bool m_isCursorVisible = false;
 
     private void Start()
     {
+        if (Death == null)
+            Death = GameObject.Find("Death");
+        Death.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -35,14 +39,33 @@ public class GameMenuManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            escMenu.SetActive(!m_isOpen);
+            if (settingsMenu.activeInHierarchy)
+            {
+                BackSettings();
+            }
+
+            if (TransitionMenu == null)
+            {
+                if (escMenu.activeInHierarchy || !settingsMenu.activeInHierarchy)
+                {
+                    escMenu.SetActive(!m_isOpen);
+                }
+            }
+            else
+            {
+                if (escMenu.activeInHierarchy || (!settingsMenu.activeInHierarchy && !TransitionMenu.activeInHierarchy))
+                {
+                    escMenu.SetActive(!m_isOpen);
+                }
+            }
             
+
             m_isOpen = !m_isOpen;
             m_isCursorVisible = !m_isCursorVisible;
         }
     }
 
-    //Back to menu WITHOUT SAVE
+    //Quit Game
     public void BackToMenu()
     {
         Application.Quit();
@@ -50,7 +73,15 @@ public class GameMenuManager : MonoBehaviour
 
     public void Leave()
     {
-        SceneManager.LoadScene("Game2");
+        if (Inventory.treasure == false)
+        {
+            TransitionMenu.SetActive(false);
+            Death.SetActive(true);
+        }
+        else
+        {
+            SceneManager.LoadScene("Game2");
+        }
     }
 
     public void Stay()
@@ -70,6 +101,7 @@ public class GameMenuManager : MonoBehaviour
     {
         escMenu.SetActive(true);
         settingsMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void LeaveEscMenu()

@@ -2340,7 +2340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8892507482624201960}
   - component: {fileID: 6252581752139027205}
-  - component: {fileID: 7404528390186206643}
+  - component: {fileID: 3355528973363651764}
   m_Layer: 0
   m_Name: CannonLeft
   m_TagString: Untagged
@@ -2375,7 +2375,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: -0.37, y: 0.78, z: 10}
---- !u!114 &7404528390186206643
+--- !u!114 &3355528973363651764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2384,7 +2384,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7096137064956601472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee03c0757d1da48c5b22d5c3ebb0cf83, type: 3}
+  m_Script: {fileID: 11500000, guid: 235273d55ab0a3745937679357cbaf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leWequin: {fileID: 0}
@@ -2606,8 +2606,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isMoving: 0
-  m_speed: 5
-  m_rotateSpeed: 20
+  m_speed: 7
+  m_rotateSpeed: 25
 --- !u!114 &4433534441485281902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2693,7 +2693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8043803484171972988}
   - component: {fileID: 1869152522711017985}
-  - component: {fileID: 1609566987809423938}
+  - component: {fileID: 8209542971145101613}
   m_Layer: 0
   m_Name: CannonRight
   m_TagString: Untagged
@@ -2728,7 +2728,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: 0.37, y: 0.78, z: 10}
---- !u!114 &1609566987809423938
+--- !u!114 &8209542971145101613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2737,7 +2737,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8208275861385665643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee03c0757d1da48c5b22d5c3ebb0cf83, type: 3}
+  m_Script: {fileID: 11500000, guid: 235273d55ab0a3745937679357cbaf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leWequin: {fileID: 0}

@@ -19,8 +19,8 @@ public class BoatInfo : MonoBehaviour
     private bool Touched;
     private bool Repairing;
 
-    private float timerfood = 8f; 
-    private float timerwater = 7f;
+    private float timerfood = 15f; 
+    private float timerwater = 12f;
     
     private boatController boat;
 
@@ -38,27 +38,27 @@ public class BoatInfo : MonoBehaviour
 
     private void Update()
     {
-        // CHEAT CODES //
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Inventory.planks += 5;
-            Inventory.cannonball += 10;
-            Inventory.food += 10;
-            Inventory.water += 20;
-        }
-        
-        if (Touched)
-        {
-            timer += Time.deltaTime;
-            if (timer >= healthstag)
-            {
-                Touched = false;
-                timer = 0;
-            }
-        }
-
-        // FOOD
+        // // CHEAT CODES //
+        //
+        // if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     Inventory.planks += 5;
+        //     Inventory.cannonball += 10;
+        //     Inventory.food += 10;
+        //     Inventory.water += 20;
+        // }
+        //
+        // if (Touched)
+        // {
+        //     timer += Time.deltaTime;
+        //     if (timer >= healthstag)
+        //     {
+        //         Touched = false;
+        //         timer = 0;
+        //     }
+        // }
+        //
+        // // FOOD
 
         if (Inventory.food > 0)
         {
@@ -67,7 +67,7 @@ public class BoatInfo : MonoBehaviour
 
         if (timerfood <= 0)
         {
-            timerfood = 8f;
+            timerfood = 12f;
             Inventory.food--;
         }
         
@@ -124,7 +124,7 @@ public class BoatInfo : MonoBehaviour
 
         if (timerwater <= 0)
         {
-            timerwater = 7f;
+            timerwater = 15f;
             Inventory.water--;
         }
     }
@@ -163,6 +163,12 @@ public class BoatInfo : MonoBehaviour
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.CompareTag("Ennemy") && Touched == false)
+        {
+            Touched = true;
+            helth.value--;
+        }
+
+        if (other.gameObject.CompareTag("Obstacle") && Touched == false)
         {
             Touched = true;
             helth.value--;
