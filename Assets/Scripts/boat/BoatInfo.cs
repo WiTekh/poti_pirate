@@ -38,27 +38,27 @@ public class BoatInfo : MonoBehaviour
 
     private void Update()
     {
-        // CHEAT CODES //
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Inventory.planks += 5;
-            Inventory.cannonball += 10;
-            Inventory.food += 10;
-            Inventory.water += 20;
-        }
-        
-        if (Touched)
-        {
-            timer += Time.deltaTime;
-            if (timer >= healthstag)
-            {
-                Touched = false;
-                timer = 0;
-            }
-        }
-
-        // FOOD
+        // // CHEAT CODES //
+        //
+        // if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     Inventory.planks += 5;
+        //     Inventory.cannonball += 10;
+        //     Inventory.food += 10;
+        //     Inventory.water += 20;
+        // }
+        //
+        // if (Touched)
+        // {
+        //     timer += Time.deltaTime;
+        //     if (timer >= healthstag)
+        //     {
+        //         Touched = false;
+        //         timer = 0;
+        //     }
+        // }
+        //
+        // // FOOD
 
         if (Inventory.food > 0)
         {
@@ -124,7 +124,7 @@ public class BoatInfo : MonoBehaviour
 
         if (timerwater <= 0)
         {
-            timerwater = 11f;
+            timerwater = 15f;
             Inventory.water--;
         }
     }

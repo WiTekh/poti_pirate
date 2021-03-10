@@ -24,10 +24,6 @@ public class changeSensivity : MonoBehaviour
                 prevSens = Inputs.camSensivity;
             }
         }
-        else
-        {
-            Debug.Log(Inputs.camSensivity);
-        }
     }
     
     public void Change()

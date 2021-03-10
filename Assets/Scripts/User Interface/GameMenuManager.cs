@@ -16,7 +16,8 @@ public class GameMenuManager : MonoBehaviour
 
     private void Start()
     {
-        Death = GameObject.Find("Death");
+        if (Death == null)
+            Death = GameObject.Find("Death");
         Death.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -43,17 +44,28 @@ public class GameMenuManager : MonoBehaviour
                 BackSettings();
             }
 
-            if (escMenu.activeInHierarchy || (!settingsMenu.activeInHierarchy && !TransitionMenu.activeInHierarchy))
+            if (TransitionMenu == null)
             {
-                escMenu.SetActive(!m_isOpen);
+                if (escMenu.activeInHierarchy || !settingsMenu.activeInHierarchy)
+                {
+                    escMenu.SetActive(!m_isOpen);
+                }
             }
+            else
+            {
+                if (escMenu.activeInHierarchy || (!settingsMenu.activeInHierarchy && !TransitionMenu.activeInHierarchy))
+                {
+                    escMenu.SetActive(!m_isOpen);
+                }
+            }
+            
 
             m_isOpen = !m_isOpen;
             m_isCursorVisible = !m_isCursorVisible;
         }
     }
 
-    //Back to menu WITHOUT SAVE
+    //Quit Game
     public void BackToMenu()
     {
         Application.Quit();
