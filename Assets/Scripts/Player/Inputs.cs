@@ -11,6 +11,7 @@ public static class Inputs
      * 8 - Repair
      */
 
+    public static int camSensivity;
     public static KeyCode[] InputArray = new KeyCode[]
     {
         KeyCode.W, KeyCode.S,

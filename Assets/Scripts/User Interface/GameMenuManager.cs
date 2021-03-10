@@ -10,7 +10,7 @@ public class GameMenuManager : MonoBehaviour
     public GameObject Player;
     public GameObject Victory;
     public GameObject Death;
-
+    
     private bool m_isOpen = false;
     private bool m_isCursorVisible = false;
 
@@ -38,8 +38,16 @@ public class GameMenuManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            escMenu.SetActive(!m_isOpen);
-            
+            if (settingsMenu.activeInHierarchy)
+            {
+                BackSettings();
+            }
+
+            if (escMenu.activeInHierarchy || (!settingsMenu.activeInHierarchy && !TransitionMenu.activeInHierarchy))
+            {
+                escMenu.SetActive(!m_isOpen);
+            }
+
             m_isOpen = !m_isOpen;
             m_isCursorVisible = !m_isCursorVisible;
         }
@@ -81,6 +89,7 @@ public class GameMenuManager : MonoBehaviour
     {
         escMenu.SetActive(true);
         settingsMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void LeaveEscMenu()
