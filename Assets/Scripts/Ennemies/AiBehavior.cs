@@ -19,6 +19,7 @@ public class AiBehavior : MonoBehaviour
         rand = new Random();
         timer = 0;
         charo = GameObject.FindWithTag("Player").transform;
+        Debug.Log(charo.name);
     }
 
     // Update is called once per frame

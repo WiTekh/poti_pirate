@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 2007494766625453040}
   - component: {fileID: -1443606520495478869}
   - component: {fileID: 7150575746938957011}
+  - component: {fileID: 1839526399976535015}
   m_Layer: 0
   m_Name: boat-fishing
   m_TagString: Player
@@ -200,6 +201,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b610ffaecac2446a483f94c19aeac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1839526399976535015
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503556989054933451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.7759695, y: 13.838319, z: 21.464684}
+  m_Center: {x: 0, y: 4.38084, z: 1.0676594}
 --- !u!1 &1752258210037916608
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +887,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.31264585
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 64088027034410014, guid: 0ef6059b9db8f3a49a64a865ec1b73c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64177936023146652, guid: 0ef6059b9db8f3a49a64a865ec1b73c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 64177936023146652, guid: 0ef6059b9db8f3a49a64a865ec1b73c2, type: 3}
+    - {fileID: 64088027034410014, guid: 0ef6059b9db8f3a49a64a865ec1b73c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ef6059b9db8f3a49a64a865ec1b73c2, type: 3}
 --- !u!4 &2720137784237391539 stripped
 Transform:
@@ -948,7 +974,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.31264588
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 64088027034410014, guid: 0ef6059b9db8f3a49a64a865ec1b73c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64177936023146652, guid: 0ef6059b9db8f3a49a64a865ec1b73c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 64177936023146652, guid: 0ef6059b9db8f3a49a64a865ec1b73c2, type: 3}
+    - {fileID: 64088027034410014, guid: 0ef6059b9db8f3a49a64a865ec1b73c2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ef6059b9db8f3a49a64a865ec1b73c2, type: 3}
 --- !u!4 &3014748360578384566 stripped
 Transform:

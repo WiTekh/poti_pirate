@@ -1184,7 +1184,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0433674, y: 1}
+    m_SensorSize: {x: 1.7589743, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8651,17 +8651,17 @@ PrefabInstance:
     - target: {fileID: 5604016772848973303, guid: cf48fc6852e8946b9a1aa8ef5e11ad92,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.635539e+37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5604016772848973303, guid: cf48fc6852e8946b9a1aa8ef5e11ad92,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 4.5898e-41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5604016772848973303, guid: cf48fc6852e8946b9a1aa8ef5e11ad92,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.4033e-41
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 5792418139772922638, guid: cf48fc6852e8946b9a1aa8ef5e11ad92,
         type: 3}
@@ -9569,7 +9569,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 364.23218}
+  m_SizeDelta: {x: 750, y: 426.38483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745827436
 MonoBehaviour:
@@ -10937,7 +10937,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0433674, y: 1}
+    m_SensorSize: {x: 1.7589743, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -11528,7 +11528,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0433674, y: 1}
+    m_SensorSize: {x: 1.7589743, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14769,7 +14769,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.0433674, y: 1}
+    m_SensorSize: {x: 1.7589743, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18150,7 +18150,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.6752033e+37, z: 4.5898e-41, w: 0}
+  m_BoundingSphereOverride: {x: 1e-45, y: 2.1723e-41, z: 0, w: -1}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
