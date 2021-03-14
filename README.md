@@ -10,3 +10,7 @@ The travel can be rude, water and food decreases over time and the shark attacks
 <img src="https://github.com/WiTekh/poti_pirate/blob/master/pp_gameplay1.png" width="250">
 <img src="https://github.com/WiTekh/poti_pirate/blob/master/pp_gameplay2.png" width="250">
 <img src="https://github.com/WiTekh/poti_pirate/blob/master/pp_gameplay3.png" width="250">
+
+### Links :
+
+#### Gamejolt : https://gamejolt.com/games/poti_pirate/594144
